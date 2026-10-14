@@ -1,0 +1,12 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+mysqlclient
+python-decouple
+reportlab
+django-filter
+Pillow
+python-barcode
+qrcode
+gunicorn

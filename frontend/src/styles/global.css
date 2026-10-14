@@ -1,0 +1,92 @@
+:root {
+  --primary: #f59e0b;
+  --accent:  #10b981;
+  --bg:      #fefce8;
+  --card:    #ffffff;
+  --muted:   #f1f5f9;
+  --text:    #1f2937;
+  --border:  #e5e7eb;
+  --danger:  #ef4444;
+  --shadow:  0 8px 24px rgba(31,41,55,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);background:var(--bg)}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.sidebar{background:var(--card);border-right:1px solid var(--border);padding:20px 16px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{font-weight:800;font-size:19px;margin-bottom:16px;color:var(--text)}
+.nav a,.nav button{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;
+  color:var(--text);text-decoration:none;margin:2px 0;font-size:14px;transition:background .15s;
+  width:100%;background:none;border:none;cursor:pointer;font-family:inherit}
+.nav a.active,.nav a:hover,.nav button:hover{background:var(--muted)}
+.header{background:var(--card);border-bottom:1px solid var(--border);height:64px;display:flex;
+  align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:10}
+.header .title{font-weight:700;font-size:17px}
+.header .user-info{background:var(--muted);padding:7px 14px;border-radius:10px;font-size:13px}
+.page{padding:20px 24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:20px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.kpi .label{opacity:.75;font-size:13px;margin-bottom:8px}
+.kpi .value{font-size:26px;font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:6px;border-radius:10px;padding:9px 16px;
+  color:#fff;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn:hover:not(:disabled){opacity:.88}
+.btn-primary{background:var(--primary)}
+.btn-accent{background:var(--accent)}
+.btn-muted{background:var(--muted);color:var(--text)}
+.btn-danger{background:var(--danger)}
+.btn-sm{padding:5px 10px;font-size:12px}
+.table{overflow:auto;border-radius:12px;border:1px solid var(--border)}
+.table table{width:100%;border-collapse:separate;border-spacing:0}
+.table thead th{text-align:left;padding:12px 16px;background:var(--muted);font-size:13px;font-weight:700}
+.table tbody td{padding:12px 16px;background:var(--card);border-top:1px solid var(--border);font-size:14px}
+.table tfoot td{padding:12px 16px;background:var(--muted);font-weight:800;border-top:1px solid var(--border)}
+.table tbody tr:hover td{background:#fffdf5}
+.input,.select,.textarea{width:100%;background:var(--muted);border:1.5px solid var(--border);
+  border-radius:10px;padding:11px 14px;outline:none;font-size:14px;color:var(--text);
+  font-family:inherit;transition:border-color .15s}
+.input:focus,.select:focus{border-color:var(--primary)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-row{margin-bottom:12px}
+.form-label{font-size:13px;opacity:.7;display:block;margin-bottom:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700}
+.badge-normal{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.badge-baixo{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}
+.badge-zerado{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.badge-done{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.badge-open{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}
+.badge-pending{background:#f0f9ff;color:#075985;border:1px solid #bae6fd}
+.badge-danger{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.actions-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.grid-sale{display:grid;grid-template-columns:2fr 1.2fr;gap:16px}
+.summary .row{display:flex;justify-content:space-between;margin:8px 0;font-size:14px}
+.summary .total{font-weight:800;font-size:18px;border-top:1px solid var(--border);padding-top:10px;margin-top:10px}
+.login-wrap{min-height:100vh;display:grid;place-items:center;background:var(--bg);padding:24px}
+.login-card{width:min(420px,92vw);background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:36px 28px;box-shadow:var(--shadow);text-align:center}
+.login-card h1{font-size:24px;font-weight:800;margin-bottom:6px}
+.login-card .hint{opacity:.7;margin-bottom:20px;font-size:14px}
+.login-card .row{margin:10px 0}
+.login-card .footer{opacity:.6;font-size:12px;margin-top:18px}
+.section-title{font-size:15px;font-weight:800;margin-bottom:14px}
+.alerta-item{display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-radius:10px;background:#fff7ed;border:1px solid #fed7aa;margin-bottom:8px}
+.chart-bars{display:flex;gap:12px;align-items:flex-end;height:200px;margin-top:12px}
+.bar{flex:1;background:var(--primary);border-radius:8px 8px 3px 3px;display:flex;align-items:flex-end;
+  justify-content:center;color:#fff;font-weight:700;padding-bottom:6px;font-size:11px;min-width:24px}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;
+  align-items:center;justify-content:center;z-index:9999;padding:20px;overflow-y:auto}
+.modal-box{background:var(--card);border-radius:20px;padding:28px;width:min(680px,94vw);
+  border:1px solid var(--border);box-shadow:var(--shadow);max-height:90vh;overflow-y:auto}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.modal-title{font-weight:800;font-size:17px}
+.modal-close{background:none;border:none;font-size:22px;cursor:pointer;color:#6b7280}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.mt-8{margin-top:8px}.mt-12{margin-top:12px}.mt-16{margin-top:16px}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .app{grid-template-columns:1fr}.sidebar{height:auto;position:relative}
+  .grid-sale{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
